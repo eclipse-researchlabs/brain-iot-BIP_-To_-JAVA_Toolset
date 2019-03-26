@@ -9,3 +9,5 @@ The project conains two folders:
 * The Main component gluing the BIP atomic components
 
 **2- The Java code related to the BIP Model:**
+* Unzip the file in Eclipse Workspace
+* Import the Java project
