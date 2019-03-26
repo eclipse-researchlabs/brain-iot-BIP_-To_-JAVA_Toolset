@@ -1,0 +1,220 @@
+@java(import="Printer",src="org.printer")
+
+@java(import="Map",src="org.printer")
+
+package RobotBehavior
+
+  //external functions
+  extern function print(int, string)
+  extern function printLoad(string,int)
+  extern function int unloadIsEmpty()
+  extern function int print()  
+  extern function int getDockingX()
+  extern function int getDockingY()
+    
+  extern function int getUnloadX()
+  extern function int getUnloadY()
+  
+  extern function int getStorageX()
+  extern function int getStorageY()
+  
+  port type ePort  ()          // Port with no associated data.
+  
+  port type Position(int varid, int placeX, int placeY)     
+  port type RobotReqToOpenDoor (int varid)
+  
+  port type ReqToOpenDoor (int varid)
+  port type ReqMoveToDock (int varid, int placeX, int placeY)   
+  port type ReqMoveToUnload (int varid,int placeX, int placeY) 
+  port type ReqMoveToStorage (int varid, int placeX, int placeY)
+  
+  atom type Robot (int id)
+ 	data int locationX
+    data int locationY
+  	data string txt
+  	data int varid
+  	
+  	   export port Position ready (varid, locationX, locationY)
+   		
+   		
+   		export port RobotReqToOpenDoor rob(varid)
+   		
+   		export port ReqMoveToDock reqMoveToDock ( varid,locationX, locationY)
+   		
+   		export port ReqMoveToUnload reqMoveToUnload (varid,locationX, locationY)
+   		
+   		export port ReqMoveToStorage  reqMoveToStorage (varid, locationX, locationY)
+   		    	
+   	  	port ePort silentDockStart()
+    	port ePort silentStorageStart()
+     	  	  	  	   	  	  	  	 	  	
+	place STARTR, Ready, OnDock, OnUnload, OnStorage
+
+	initial to STARTR do{locationX = Map.getDockingX(); locationY = Map.getDockingY();varid =id;}
+
+	on ready from STARTR to Ready do{}
+	
+	on reqMoveToUnload from Ready to OnUnload do{ }
+	on rob from OnUnload to STARTR do{}
+	
+	on reqMoveToDock from Ready to OnDock do{ }
+	on silentDockStart from OnDock to STARTR
+	
+ 	on reqMoveToStorage from Ready to OnStorage do{ }
+ 	on silentStorageStart from  OnStorage	to STARTR
+ 	
+ end  
+ 
+ atom type RemoteDoor (int id)
+
+  data string txt
+  data int varid
+  export port ReqToOpenDoor req(varid)
+
+  place STARTD
+  
+   	initial to STARTD do {varid =id;}
+   	on req from STARTD to STARTD do{}
+
+end   
+
+
+ atom type Orchestrator (int id)
+ 	data int varid
+ 	
+	data int locationX
+    data int locationY
+    
+    data int dockingX
+    data int dockingY
+    
+    data int unloadX
+    data int unloadY
+
+    data int storageX
+    data int storageY
+        
+  	data int load
+  	data string txt
+  	
+  	
+  		export port Position ready (varid ,locationX, locationY)
+   		
+   		export port ReqToOpenDoor req(varid)
+   		
+   		export port RobotReqToOpenDoor rob(varid )
+   		
+   		export port ReqMoveToDock reqMoveToDock(varid,dockingX, dockingY)
+   		
+   		export port ReqMoveToUnload reqMoveToUnload(varid, unloadX, unloadY)
+   		
+   		export port ReqMoveToStorage  reqMoveToStorage (varid, storageX, storageY)
+   		    	
+   		    	
+   	  	port ePort silentLoad0()
+    	port ePort silentLoad1()
+    	port ePort silentToUnload()
+     	port ePort silentToStorage()
+     	  	  	  	   	  	  	  	 	  	
+place START, DoorOpen, CheckUnload, MoveToDock, NotMoveToDock, MoveToStorage, MoveToUnload
+
+initial to START do {dockingX = Map.getDockingX();
+					 dockingY = Map.getDockingY();
+					 
+					 unloadX=   Map.getUnloadX();
+					 unloadY=   Map.getUnloadY();
+					 
+					 storageX = Map.getStorageX();
+					 storageY = Map.getStorageY();
+					 load =5;
+					 varid = id;
+					 }
+
+
+
+on rob           from START to DoorOpen  do{ }
+on req           from DoorOpen to START  do{}
+
+on ready         from START to  CheckUnload do{ }
+
+on silentLoad0   from CheckUnload to  MoveToDock provided( load <=0 ) do{txt =" [Silent][Orchestrator] Orchestrator MoveToDock"; Printer.print(txt,varid);}
+
+on silentLoad1   from CheckUnload to  NotMoveToDock provided ( load >0 )  do{txt =" [silent][Orchestrator] Orchestrator NotMoveToDock"; Printer.print(txt,varid);}
+
+on reqMoveToDock from MoveToDock  to  START  do{ }
+
+
+
+on silentToUnload from NotMoveToDock to MoveToUnload provided((locationX == storageX && locationY == storageY) || (locationX == dockingX && locationY == dockingY)  ) do { txt =" [Orchestrator] The unloading charge is : "; Printer.printLoad(txt,load); load =(load - 1);  txt =" [silent][Orchestrator] Orchestrator MoveToUnload"; Printer.print(txt,varid);}
+
+on silentToStorage from NotMoveToDock to MoveToStorage provided (!((locationX == storageX && locationY == storageY) || (locationX == dockingX && locationY == dockingY)))  do{txt =" [silent][Orchestrator] Orchestrator  MoveToStorage"; Printer.print(txt,varid);}
+
+on reqMoveToUnload from MoveToUnload to  START do{ }
+
+on reqMoveToStorage from MoveToStorage to  START do{ }
+
+end 
+
+connector type robotToOrch(RobotReqToOpenDoor m, RobotReqToOpenDoor s)
+data string txt
+data int id
+  define s m
+  on s m up {id = s.varid; txt =" ("+s.varid+")-->"+"("+m.varid+") [Robot] Robot Send REQ to Orchestrator to open the door"; Printer.print(txt,id);}
+  
+end
+
+connector type orchToDoor(ReqToOpenDoor m, ReqToOpenDoor s) 
+data string txt
+data int id
+  define s m
+   on s m up {id = m.varid; txt =" ("+m.varid+")-->"+"("+s.varid+")[Orchestrator] Orchestrator send REQ to Remote Door"; Printer.print(txt,id);}
+end
+
+connector type robotPosition(Position m, Position s) 
+data string txt
+data int id 
+  define s m
+  
+    on s m up {m.placeX =s.placeX ;m.placeY =s.placeY ; id = s.varid; txt ="("+s.varid+")-->"+"("+m.varid+") [Robot] Robot send position to Orchestrator"; Printer.print(txt,id);}
+end
+
+connector type moveToDock(ReqMoveToDock m, ReqMoveToDock s) 
+data string txt
+data int id 
+  define s m
+  
+    on s m up {s.placeX =m.placeX ;s.placeY =m.placeY ;id = m.varid; txt ="("+m.varid+")-->"+"("+s.varid+") [Orchestrator] Orchestrator send REQ to MoveToDock"; Printer.print(txt,id);}
+end
+
+connector type moveToUnload(ReqMoveToUnload m, ReqMoveToUnload s) 
+data string txt
+data int id 
+  define s m
+  
+    on s m up {s.placeX =m.placeX ;s.placeY =m.placeY ; id = m.varid; txt ="("+m.varid+")-->"+"("+s.varid+") [Orchestrator] Orchestrator send REQ to MoveToUnload"; Printer.print(txt,id);}
+end
+
+connector type moveToStorage(ReqMoveToStorage m, ReqMoveToStorage s) 
+data string txt
+data int id 
+  define s m
+  
+    on s m up {s.placeX =m.placeX ;s.placeY =m.placeY ;id = m.varid; txt ="("+m.varid+")-->"+"("+s.varid+") [Orchestrator] Orchestrator send REQ to MoveToStorage"; Printer.print(txt,id);}
+end
+
+  compound type sim07()
+        component Robot robot (1)
+  		component RemoteDoor door (2)
+  		component Orchestrator orch (3)
+  		
+     connector robotToOrch   c1(orch.rob, robot.rob)
+     connector orchToDoor    c2(orch.req, door.req)
+     connector robotPosition c3(orch.ready, robot.ready)
+     
+     connector moveToDock    c4(orch.reqMoveToDock, robot.reqMoveToDock)    
+     connector moveToUnload  c5(orch.reqMoveToUnload, robot.reqMoveToUnload)
+     connector moveToStorage c6(orch.reqMoveToStorage, robot.reqMoveToStorage)     
+      
+  end
+  
+end
