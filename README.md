@@ -1,5 +1,8 @@
 # BIP_To_Java
 
+
+> This is a first prototype for the resulting BIP to Java Mapping 
+
 The project conains two folders:
 
 **1- The BIP model of the Robot Behavior**
