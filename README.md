@@ -2,8 +2,9 @@
 
 > This is a first prototype for the resulting BIP to Java Mapping 
 
-**BIP To Java Plug-in **
-Follow these instructions to install the BIP To Java Plug-in (I successfully deployed it on Linux-64 bits):
+**BIP To Java Plug-in**
+
+**Follow these instructions to install the BIP To Java Plug-in (I successfully deployed it on Linux-64 bits):**
 
 *  1- Download and Uncompress one the Eclipse version located in : 
 >          Linux 64-bits :http://download.polarsys.org/3p/PolarSysIDE/0.8/org.polarsys.ide.0.8-incubation-linux.gtk.x86_64.tar.gz
