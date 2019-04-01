@@ -15,8 +15,9 @@ Follow these instructions to install the BIP To Java Plug-in (I successfully dep
 
 * 2- Download and Uncompress the developed Plugin in a specific directory        
 * 3- Go To Help | Install New software 
-* 4- Add the location of the Archive file ( from the directory where the Plugin was uncompressed) : The repo should look like  BIP - file:/home/Brain-IoT/Poly/Eclipse/org.verimag.feature.bip.update/
-* `BIP - file:/home/Brain-IoT/Poly/Eclipse/org.verimag.feature.bip.update/`
+* 4- Add the location of the Archive file ( from the directory where the Plugin was uncompressed) : The repo should look like :
+>  `BIP - file:/home/Brain-IoT/Poly/Eclipse/org.verimag.feature.bip.update/` 
+
 * 5- Select org.verimag.feature.bip  and click Next
 * 6- Select BIP feature and click Next
 * 7- Accept the terms of license and click Finish (In case of exception click OK)
