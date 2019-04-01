@@ -14,7 +14,7 @@
 
 
 
-* 2- Download and Uncompress the developed Plugin in a specific directory        
+* 2- Download and Uncompress the developed Plugin `org.verimag.feature.bip.update.zip` in a specific directory         
 * 3- Go To Help | Install New software 
 * 4- Add the location of the Archive file ( from the directory where the Plugin was uncompressed) : The repo should look like :
 >  `BIP - file:/home/Brain-IoT/Poly/Eclipse/org.verimag.feature.bip.update/` 
