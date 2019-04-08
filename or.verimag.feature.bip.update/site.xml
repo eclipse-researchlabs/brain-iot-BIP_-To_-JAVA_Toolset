@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.verimag.bip.feature_1.0.0.201904012045.jar" id="org.verimag.bip.feature" version="1.0.0.201904012045">
+      <category name="org.verimag.feature.bip"/>
+   </feature>
+   <category-def name="org.verimag.feature.bip" label="org.verimag.feature.bip">
+      <description>
+         BIP to JAVA Code Generator
+Developed by : Baouya Abdelhakim
+Research Engineer, Verimag Lab
+Université Grenoble Alpes (UGA)
+      </description>
+   </category-def>
+</site>
