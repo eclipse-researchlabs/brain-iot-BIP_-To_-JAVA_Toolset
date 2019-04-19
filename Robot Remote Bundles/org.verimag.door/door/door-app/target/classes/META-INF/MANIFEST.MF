@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1555691341199
+Bundle-ManifestVersion: 2
+Bundle-Name: door-app
+Bundle-SymbolicName: org.verimag.door.door-app
+Bundle-Version: 0.0.1.201904191629
+Created-By: 1.8.0_192 (Oracle Corporation)
+Private-Package: config
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.confi
+ gurator)(version>=1.0.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osg
+ i.ee=JavaSE)(version=1.8))"
+Tool: Bnd-4.1.0.201810181252
+

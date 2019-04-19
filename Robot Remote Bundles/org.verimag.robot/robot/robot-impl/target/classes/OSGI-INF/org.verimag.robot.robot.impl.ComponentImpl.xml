@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.verimag.robot.robot.impl.ComponentImpl">
+  <property name="osgi.command.function" type="String" value="robot"/>
+  <property name="osgi.command.scope" type="String" value="ROBOT"/>
+  <service>
+    <provide interface="org.verimag.robot.robot.impl.ComponentImpl"/>
+  </service>
+  <implementation class="org.verimag.robot.robot.impl.ComponentImpl"/>
+</scr:component>
