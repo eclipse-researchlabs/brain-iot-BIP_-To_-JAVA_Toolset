@@ -9,7 +9,7 @@
 *  2- In the entity application folder, for example, door-app, open the debug.bndrun and start the OSGi.
 *  3- Check the relevant file (the business implementation), for example, door-impl, by typing lb.
 *  4- Start the door-impl, orch-impl and robot-impl by typing the command door, orch, and robot, respectively.
->    During the execution you will see that the orchestrator asks the robot to move to the unload location at the first step and then it will ask the robot to move to the docking
+>    `During the execution you will see that the orchestrator asks the robot to move to the unload location at the first step and then it will ask the robot to move to the docking.`
 
 
 
