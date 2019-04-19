@@ -2,6 +2,18 @@
 
 > This is a first prototype for the resulting BIP to Java Mapping 
 
+
+
+**Bundles for remote execution**
+*  1- Import the Maven files located in Robot Remote Bundles in Eclipse Photon Version
+*  2- In the entity application folder, for example, door-app, open the debug.bndrun and start the OSGi.
+*  3- Check the relevant file (the business implementation), for example, door-impl, by typing lb.
+*  4- Start the door-impl, orch-impl and robot-impl by typing the command door, orch, and robot, respectively.
+>    During the execution you will see that the orchestrator asks the robot to move to the unload location at the first step and then it will ask the robot to move to the docking
+
+
+
+
 **BIP To Java Plug-in**
 
 **Follow these instructions to install the BIP To Java Plug-in (I successfully deployed it on Linux-64 bits):**
