@@ -52,9 +52,8 @@ The project conains two folders:
 * Unzip the file in Eclipse Workspace
 * Import the Java project
 
-**Generated Bundles**
+# Generated Bundles
 * Import the bundles from eventingBusExample
 * Open the debug file from single-framework-example and press run OSGi
 * check the availability of bundles using  command : lb
 * run this commands : start door | start orch | start robot
-* 
