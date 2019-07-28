@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1557399737243
+Bundle-Description: "The robot.impl DS component - built using OSGi en
+ Route R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: robot.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.robot.impl
+Bundle-Version: 0.0.1.201905091102
+Created-By: 1.8.0_192 (Oracle Corporation)
+Import-Package: com.paremus.brain.iot.example.orch.api;version="[1.0,2
+ )",com.paremus.brain.iot.example.robot.api;version="[1.0,2)",eu.brain
+ .iot.eventing.api;version="[0.0,1)"
+Private-Package: atom,com.paremus.brain.iot.example.robot.impl,compoun
+ d,connector,org.lib,port,task,type
+Provide-Capability: osgi.service;objectClass:List<String>="com.paremus
+ .brain.iot.example.robot.impl.ComponentImpl,eu.brain.iot.eventing.api
+ .SmartBehaviour",eu.brain.iot.behaviour;consumed:List<String>="com.pa
+ remus.brain.iot.example.orch.api.PositionX,com.paremus.brain.iot.exam
+ ple.orch.api.PositionY,com.paremus.brain.iot.example.orch.api.Movetod
+ ockRequest,com.paremus.brain.iot.example.orch.api.Movetostorage,com.p
+ aremus.brain.iot.example.orch.api.MovetounloadRequest"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.paremus.brain.iot.example.robot.impl.C
+ omponentImpl.xml
+Tool: Bnd-4.2.0.201903051501
+

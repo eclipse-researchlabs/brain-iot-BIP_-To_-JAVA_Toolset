@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.verimag.door.door.impl.ComponentImpl">
+  <property name="osgi.command.function" type="String" value="door"/>
+  <property name="osgi.command.scope" type="String" value="DOOR"/>
+  <service>
+    <provide interface="org.verimag.door.door.impl.ComponentImpl"/>
+  </service>
+  <implementation class="org.verimag.door.door.impl.ComponentImpl"/>
+</scr:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.verimag.orch.orch.impl.ComponentImpl">
+  <property name="osgi.command.function" type="String" value="orch"/>
+  <property name="osgi.command.scope" type="String" value="ORCH"/>
+  <service>
+    <provide interface="org.verimag.orch.orch.impl.ComponentImpl"/>
+  </service>
+  <implementation class="org.verimag.orch.orch.impl.ComponentImpl"/>
+</scr:component>
