@@ -8,6 +8,7 @@
 *  4- Type predictor to load the predictor bundle
 *  5- Type train to load the train bundle
 *  6- Type main to load the main bundle in charge of commanding prediction and training
+*  7- Download the modified version of IM prediction package to make a quick prediction on your OS platform (download the required libraries and test-it) 
 
 >    ` Important: To make a correct prediction, users have to modify the predictmodel class in predict.impl to locate the sh file and ensure communication with python files.`
 >    ` uncomment the predict.sh with a correct location of python files.`
