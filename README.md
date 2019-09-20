@@ -1,3 +1,16 @@
+# EMALCSA BUNDLES
+> This is a first prototype for THE BUNDLES adopting the event bus for emalcsa case study
+
+**Three bundles are necessary to execute the bundles**
+*  1- Import the Maven files located in emalcsa directory or unzip the file emalcsa.zip
+*  2- locate single-framework-example and lunch debug.bndrun
+*  3- Click run OSGi
+*  4- Type predictor to load the predictor bundle
+*  5- Type train to load the train bundle
+*  6- Type main to load the main bundle in charge of commanding prediction and training
+
+
+
 # BIP_To_Java
 
 > This is a first prototype for the resulting BIP to Java Mapping 
