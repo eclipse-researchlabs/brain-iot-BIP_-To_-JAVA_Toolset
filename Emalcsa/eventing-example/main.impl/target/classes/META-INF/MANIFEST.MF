@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1569003698389
+Bundle-Description: "The orchs.impl DS component - built using OSGi en
+ Route R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: main.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.main.impl
+Bundle-Version: 0.0.1.201909201821
+Created-By: 1.8.0_192 (Oracle Corporation)
+Import-Package: com.paremus.brain.iot.example.main.api;version="[1.0,2
+ )",com.paremus.brain.iot.example.predict.api;version="[1.0,2)",com.pa
+ remus.brain.iot.example.train.api;version="[1.0,2)",eu.brain.iot.even
+ ting.api;version="[0.0,1)"
+Private-Package: atom,com.paremus.brain.iot.example.main.impl,compound
+ ,connector,org.lib,port,task,type
+Provide-Capability: osgi.service;objectClass:List<String>="com.paremus
+ .brain.iot.example.main.impl.ComponentImpl,eu.brain.iot.eventing.api.
+ SmartBehaviour",eu.brain.iot.behaviour;consumed:List<String>="com.par
+ emus.brain.iot.example.predict.api.WaterHightResultRequest,com.paremu
+ s.brain.iot.example.train.api.TrainQueryResponse"
+Require-Capability: osgi.service;filter:="(objectClass=eu.brain.iot.ev
+ enting.api.EventBus)";effective:=active,osgi.extender;filter:="(&(osg
+ i.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))",osgi.
+ ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.paremus.brain.iot.example.main.impl.Co
+ mponentImpl.xml
+Tool: Bnd-4.2.0.201903051501
+

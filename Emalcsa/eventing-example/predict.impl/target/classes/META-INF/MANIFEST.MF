@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1569006328690
+Bundle-Description: "The predict.impl DS component - built using OSGi 
+ enRoute R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: predict.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.predict.impl
+Bundle-Version: 0.0.1.201909201905
+Created-By: 1.8.0_192 (Oracle Corporation)
+Import-Package: com.paremus.brain.iot.example.main.api;version="[1.0,2
+ )",com.paremus.brain.iot.example.predict.api;version="[1.0,2)",eu.bra
+ in.iot.eventing.api;version="[0.0,1)"
+Private-Package: atom,com.paremus.brain.iot.example.predict.impl,compo
+ und,connector,org.lib,port,task,type
+Provide-Capability: osgi.service;objectClass:List<String>="com.paremus
+ .brain.iot.example.predict.impl.ComponentImpl,eu.brain.iot.eventing.a
+ pi.SmartBehaviour",eu.brain.iot.behaviour;consumed:List<String>="com.
+ paremus.brain.iot.example.main.api.WaterHightRequest"
+Require-Capability: osgi.service;filter:="(objectClass=eu.brain.iot.ev
+ enting.api.EventBus)";effective:=active,osgi.extender;filter:="(&(osg
+ i.extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))",osgi.
+ ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.paremus.brain.iot.example.predict.impl
+ .ComponentImpl.xml
+Tool: Bnd-4.2.0.201903051501
+

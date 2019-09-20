@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1568827321246
+Bundle-Description: "The consumer.impl DS component - built using OSGi
+  enRoute R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: consumer.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.consumer.impl
+Bundle-Version: 0.0.1.201909181722
+Created-By: 1.8.0_192 (Oracle Corporation)
+Import-Package: com.paremus.brain.iot.example.producer.api;version="[1
+ .0,2)",eu.brain.iot.eventing.api;version="[0.0,1)"
+Private-Package: com.paremus.brain.iot.example.consumer.impl
+Provide-Capability: osgi.service;objectClass:List<String>="com.paremus
+ .brain.iot.example.consumer.impl.ComponentImpl,eu.brain.iot.eventing.
+ api.SmartBehaviour",eu.brain.iot.behaviour;consumed:List<String>="com
+ .paremus.brain.iot.example.producer.api.InfoDTO"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.paremus.brain.iot.example.consumer.imp
+ l.ComponentImpl.xml
+Tool: Bnd-4.2.0.201903051501
+
