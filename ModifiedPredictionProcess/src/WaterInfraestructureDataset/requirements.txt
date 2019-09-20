@@ -1,0 +1,7 @@
+sklearn
+numpy
+pandas
+matplotlib
+openpyxl==2.5.12
+Pillow
+Pillow-PIL

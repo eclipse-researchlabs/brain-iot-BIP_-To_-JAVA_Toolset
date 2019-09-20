@@ -1,0 +1,7 @@
+.idea
+extracted_data
+*.pyc
+venv
+target
+trained_models
+.attach*

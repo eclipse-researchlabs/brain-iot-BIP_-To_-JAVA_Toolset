@@ -1,0 +1,7 @@
+
+
+Cecebre Dam Dataset: Outliers
+
+water_flow: 
+	22-01-1994: 165.02 -> Probably a mistake. 16.02 ?
+	[5-01-2001, 12-01-2001]: values > 50 -> Seems to not be a mistake but... barely any registered water precipitations for those days?  There were high numberes registered in previous november and december though...

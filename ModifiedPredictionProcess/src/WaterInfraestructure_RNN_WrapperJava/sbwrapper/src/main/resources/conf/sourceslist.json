@@ -1,0 +1,12 @@
+{
+  "basePath": "../../WaterInfraestructure_RNN_PythonTensorflow/",
+  "commandToExecute": "train",
+  "configPath": "./conf/train_models_configuration.json",
+  "sources": [
+    "utils/dataset_utils.py",
+    "utils/results_analysis.py",
+    "utils/logging_config.py",
+    "nn_models/recurrent_model.py",
+    "nn_train.py"
+  ]
+}

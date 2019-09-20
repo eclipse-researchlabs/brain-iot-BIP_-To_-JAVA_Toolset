@@ -1,0 +1,40 @@
+
+HTTP REST API:
+
+
+- MAKE_PREDICTION
+    - Action: GET /water-management/cecebre-dam/make-prediction
+    - Headers: "Content-Type: application/json"
+	- Parameters: None
+	- Body:
+{
+    "water_flow": 1.53,
+    "rain_precipitation": 10.2,
+    "water_height": 31.12
+}
+	- Returns:
+	    * if OK: 200, json
+{
+    "model_used_for_prediction": {
+        "model_id": "./trained_models/model_5_2019_0730_1230/model.h5"
+    },
+    "predicted_values": {
+        "water_flow": 2.0227813633084297
+    }
+}
+        * if no valid parameters: 400, String message
+
+
+- TRAIN_MODEL
+    - Action: PUT /water-management/cecebre-dam/request-train-model
+    - Headers:
+	- Parameters: None
+	- Body: None
+	- Returns:
+	    * if OK: 200, json
+{
+    "desc": "This is supposed to be a new job with an ID that can be accessed through this REST API. Coming soon!",
+    "status": "New training stage launched!",
+    "thread_name": "Thread-6"
+}
+    This method is to be refactored current version is just for testing purposes. The initial idea is for it to be a request for a training session, a job and/or model ID should be returned... And then another method could access to current state of that job/model.

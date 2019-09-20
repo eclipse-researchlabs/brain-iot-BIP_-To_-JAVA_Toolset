@@ -1,0 +1,84 @@
+{
+  "preprocessed_inputs_filepath": "./labelled_data/telva_dataset.csv",
+
+  "split_parameters": {
+    "testing_offset": 8784,
+    "validation_offset": 10248
+  },
+
+  "number_of_timesteps": 50,
+  "number_of_features_for_learning": 3,
+  "number_of_features_to_predict": 1,
+
+  "output_model_path": "./trained_models/",
+
+  "models_to_NOT_train": [
+    {
+      "name": "model_1",
+      "description": "Basic (non recurrent) NN approach",
+      "build_function": "build_basic_nn_for_regression",
+      "units": 32,
+      "input_shape": [1],
+      "activation": "relu",
+      "optimizer": "rmsprop",
+      "loss": "mae",
+      "tensorboard": true
+    },
+    {
+      "name": "model_7",
+      "description": "Recurrent model, LSTM with 1 layer and TimeDistributed",
+      "build_function": "build_recurrent_nn_lstm_for_regression",
+      "units": 64,
+      "time_distributed": true
+    }
+  ],
+
+  "models_to_train": [
+
+    {
+      "name": "model_5",
+      "description": "Recurrent model, LSTM with 2 layers",
+      "build_function": "build_recurrent_nn_lstm_for_regression",
+      "additional_layers": 1,
+      "units": 64
+    },
+     {
+      "name": "model_2",
+      "description": "Very simple recurrent model, GRU",
+      "build_function": "build_recurrent_nn_grum_for_regression",
+      "units": 32,
+      "optimizer": "rmsprop",
+      "loss": "mae"
+    },
+    {
+      "name": "model_3",
+      "description": "Recurrent model, GRU, with dropout",
+      "build_function": "build_recurrent_nn_gru_for_regression",
+      "units": 32,
+      "dropout": 0.2,
+      "optimizer": "rmsprop",
+      "loss": "mae"
+    },
+    {
+      "name": "model_4",
+      "description": "Recurrent model, simple LSTM",
+      "build_function": "build_recurrent_nn_lstm_for_regression",
+      "units": 32
+    },
+    {
+      "name": "model_6",
+      "description": "Recurrent model, simple LSTM",
+      "build_function": "build_recurrent_nn_lstm_for_regression",
+      "units": 50,
+      "input_shape": [50]
+    }
+
+  ],
+
+  "models_to_NOT_load": [
+  ],
+
+  "models_to_load": [
+  ]
+
+}
