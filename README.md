@@ -9,6 +9,8 @@
 *  5- Type train to load the train bundle
 *  6- Type main to load the main bundle in charge of commanding prediction and training
 
+>    ` Important: To make a correct prediction, users have to modify the predictmodel class in predict.impl to locate the sh file and ensure communication with python files.`
+>    ` uncomment the predict.sh with a correct location of python files.`
 
 
 # BIP_To_Java
