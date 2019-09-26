@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.paremus.brain.iot.example.consumer.impl.ComponentImpl">
+  <property name="eu.brain.iot.behaviour.consumed" type="String">com.paremus.brain.iot.example.producer.api.InfoDTO</property>
+  <property name="eu.brain.iot.behaviour.filter" type="String" value=""/>
+  <service>
+    <provide interface="eu.brain.iot.eventing.api.SmartBehaviour"/>
+    <provide interface="com.paremus.brain.iot.example.consumer.impl.ComponentImpl"/>
+  </service>
+  <implementation class="com.paremus.brain.iot.example.consumer.impl.ComponentImpl"/>
+</scr:component>

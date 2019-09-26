@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.paremus.brain.iot.example.robot.impl.ComponentImpl">
+  <property name="osgi.command.function" type="String" value="robot"/>
+  <property name="eu.brain.iot.behaviour.consumed" type="String">com.paremus.brain.iot.example.orch.api.PositionX
+com.paremus.brain.iot.example.orch.api.PositionY
+com.paremus.brain.iot.example.orch.api.MovetodockRequest
+com.paremus.brain.iot.example.orch.api.Movetostorage
+com.paremus.brain.iot.example.orch.api.MovetounloadRequest</property>
+  <property name="osgi.command.scope" type="String" value="ROBOT"/>
+  <property name="eu.brain.iot.behaviour.filter" type="String" value=""/>
+  <service>
+    <provide interface="eu.brain.iot.eventing.api.SmartBehaviour"/>
+    <provide interface="com.paremus.brain.iot.example.robot.impl.ComponentImpl"/>
+  </service>
+  <reference name="eventBus" interface="eu.brain.iot.eventing.api.EventBus" field="eventBus"/>
+  <implementation class="com.paremus.brain.iot.example.robot.impl.ComponentImpl"/>
+</scr:component>
