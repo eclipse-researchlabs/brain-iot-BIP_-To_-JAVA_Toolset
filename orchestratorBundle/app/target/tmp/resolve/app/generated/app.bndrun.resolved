@@ -1,0 +1,5 @@
+org.osgi.enroute.orchestrator.impl;version='[1.0.0,1.0.1)';resolution=file:/home/baouyaa/EclipseLunaOSGI/EMALCSA/Photontest/workspace/Orchestrator/orchestrator/impl/target/impl-1.0-SNAPSHOT.jar
+org.apache.felix.scr;version='[2.1.10,2.1.11)';resolution=file:/root/.m2/repository/org/apache/felix/org.apache.felix.scr/2.1.10/org.apache.felix.scr-2.1.10.jar
+com.fasterxml.jackson.core.jackson-core;version='[2.10.0,2.10.1)';resolution=file:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.0/jackson-core-2.10.0.jar
+com.fasterxml.jackson.core.jackson-databind;version='[2.10.0,2.10.1)';resolution=file:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.0/jackson-databind-2.10.0.jar
+com.fasterxml.jackson.core.jackson-annotations;version='[2.10.0,2.10.1)';resolution=file:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.0/jackson-annotations-2.10.0.jar
