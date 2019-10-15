@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1571101999125
+Bundle-Description: "The robot.impl DS component - built using OSGi en
+ Route R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: robot.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.robot.impl
+Bundle-Version: 0.0.1.201910150113
+Created-By: 1.8.0_192 (Oracle Corporation)
+Tool: Bnd-4.2.0.201903051501
+

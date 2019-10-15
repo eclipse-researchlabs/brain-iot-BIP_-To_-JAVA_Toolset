@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.paremus.brain.iot.example.orch.impl.ComponentImpl">
+  <property name="osgi.command.function" type="String" value="orch"/>
+  <property name="osgi.command.scope" type="String" value="Orchestrator"/>
+  <service>
+    <provide interface="SmartBehaviour"/>
+    <provide interface="com.paremus.brain.iot.example.orch.impl.ComponentImpl"/>
+  </service>
+  <implementation class="com.paremus.brain.iot.example.orch.impl.ComponentImpl"/>
+</scr:component>

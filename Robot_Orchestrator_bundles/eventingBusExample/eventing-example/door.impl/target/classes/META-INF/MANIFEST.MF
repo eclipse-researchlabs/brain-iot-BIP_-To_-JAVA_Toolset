@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1571102127855
+Bundle-Description: "The door.impl DS component - built using OSGi enR
+ oute R7"
+Bundle-ManifestVersion: 2
+Bundle-Name: door.impl
+Bundle-SymbolicName: com.paremus.brain.iot.example.door.impl
+Bundle-Version: 0.0.1.201910150115
+Created-By: 1.8.0_192 (Oracle Corporation)
+Tool: Bnd-4.2.0.201903051501
+
