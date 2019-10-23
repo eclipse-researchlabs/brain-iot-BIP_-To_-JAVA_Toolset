@@ -6,7 +6,7 @@
 image: maven:3-jdk-11
 
 variables:
-  MAVEN_SB: "-f Orchestrator_Three_Robots/eventingBusExample/pom.xml"
+  MAVEN_SB: "-f  Orchestrator_Web_Interface/eventingBusExample/pom.xml"
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
   MAVEN_CLI_OPTS: "--batch-mode -s .m2/settings.xml"
   MAVEN_DEPLOY_OPTS: "-DaltReleaseDeploymentRepository=brain-iot-releases::default::https://nexus.repository-pert.ismb.it/repository/maven-releases -DaltSnapshotDeploymentRepository=brain-iot-snapshots::default::https://nexus.repository-pert.ismb.it/repository/maven-snapshots"
