@@ -19,7 +19,7 @@ cache:
 build:
   stage: build
   script:
-    - mvn $MAVEN_SB $MAVEN_CLI_OPTS -Dmaven.test.skip=true package
+    - mvn $MAVEN_SB $MAVEN_CLI_OPTS -Dmaven.test.skip=true clean package
 
 test:
   stage: test
