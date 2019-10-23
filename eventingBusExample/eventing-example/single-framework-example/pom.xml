@@ -125,6 +125,21 @@
                     </bndruns>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.paremus.brain.iot.maven</groupId>
+                <artifactId>smart-behaviour-maven-plugin</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>smart-behaviour</goal>
+                        </goals>
+                        <configuration>
+                            <bndrun>single-framework-example.bndrun</bndrun>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

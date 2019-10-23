@@ -28,7 +28,12 @@
     <module>consumer.impl</module>-->
     
     <module>single-framework-example</module>
-    
+
+      <module>producer.impl</module>
+      <module>producer.api</module>
+
+      <module>consumer.impl</module>
+
         <module>door.impl</module>
         
         <module>orch.impl</module>
